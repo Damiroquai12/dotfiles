@@ -1,0 +1,80 @@
+{
+  "entries": {
+    "brew": {
+      "stow": {
+        "version": "2.3.1",
+        "bottle": {
+          "rebuild": 0,
+          "cellar": ":any_skip_relocation",
+          "prefix": "/opt/homebrew",
+          "root_url": "https://homebrew.bintray.com/bottles",
+          "files": {
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "f6dc9f73ac8ef55caa0f8204c893bf41dcdffbae22b39d95a85eee5c99507b55"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.big_sur.bottle.tar.gz",
+              "sha256": "e2a4d5cae000bcb2a5464f618b0c1fb174f4c90f66793411ff3c3bdda0438083"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.catalina.bottle.tar.gz",
+              "sha256": "c99a90dc5e3db8ebcb017df044723fb4e6cce7fb94aa24cf46c8d2c0665bf9a0"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.mojave.bottle.tar.gz",
+              "sha256": "409987564f7779d6a1db75f64e54c4713ecd9b9e006abac931f8e8d645bdac92"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.high_sierra.bottle.tar.gz",
+              "sha256": "409987564f7779d6a1db75f64e54c4713ecd9b9e006abac931f8e8d645bdac92"
+            },
+            "sierra": {
+              "url": "https://homebrew.bintray.com/bottles/stow-2.3.1.sierra.bottle.tar.gz",
+              "sha256": "cbc7a61940a343aff46fdb6190dc26a359d26c9c468c05b1dbde2484a066ceb6"
+            }
+          }
+        }
+      },
+      "starship": {
+        "version": "0.50.0",
+        "bottle": {
+          "rebuild": 0,
+          "cellar": ":any_skip_relocation",
+          "prefix": "/opt/homebrew",
+          "root_url": "https://homebrew.bintray.com/bottles",
+          "files": {
+            "arm64_big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/starship-0.50.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "992fbc07f611c871359f70e96709cd83527de0eb9b78981e2cf85fa0bf8c09a2"
+            },
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/starship-0.50.0.big_sur.bottle.tar.gz",
+              "sha256": "c4057beb592199c72945960780e133a6bbc0ba8493b3be524a7cb452ecc15611"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/starship-0.50.0.catalina.bottle.tar.gz",
+              "sha256": "1881da8ab97e614c5a31dc284fa2ed79b911eca4734500f5b81121b164da9953"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/starship-0.50.0.mojave.bottle.tar.gz",
+              "sha256": "a58de858346930f05259483c254ebecca3d60325145fc1e55f1153b2f4aed266"
+            }
+          }
+        }
+      }
+    }
+  },
+  "system": {
+    "macos": {
+      "big_sur": {
+        "HOMEBREW_VERSION": "3.0.5",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "6753178379440540931ba5b0ec2852d7d7d10b9b",
+        "CLT": "12.4.0.0.1.1610135815",
+        "Xcode": "12.0",
+        "macOS": "11.2"
+      }
+    }
+  }
+}
