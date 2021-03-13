@@ -22,8 +22,12 @@ $ cd nerd-fonts
 ./install.sh #好きなフォントを指定 e.g. $ ./install.sh Hack
 
 # 不要になったファイルを削除
-cd ..
-rm -rf nerd-fonts
+$ cd ..
+$ rm -rf nerd-fonts
+
+最後にフォントの変更をTerminal->Profiles->Text->Fontで行う。
+今回の使用フォントは
+Bitstream Vera Sans Mono Nerd Font Complete 11
 
 [starship_アイコンの変更]
 //starship.tomlでの作業
