@@ -12,7 +12,7 @@ $ curl -o - https://raw.githubusercontent.com/Damiroquai12/dotfiles/master/insta
 $ source ~/.zshrc
 ```
 ## other
-# starship_文字化けを修正
+### starship_文字化けを修正
 - starshipのフォントが文字化けしている場合フォントをインストール
 ```
 $ git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts.git
@@ -32,7 +32,7 @@ $ rm -rf nerd-fonts
 今回の使用フォントは
 Bitstream Vera Sans Mono Nerd Font Complete 11
 
-# starship_アイコンの変更
+### starship_アイコンの変更
 starship.tomlでの作業
 
 e.g.ラインの改行をしない場合下記を追加
