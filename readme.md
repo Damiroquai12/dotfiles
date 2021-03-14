@@ -1,5 +1,4 @@
-# name
-
+## name
 dotfiles for Mac(Apple Silicon)
 
 ## description
