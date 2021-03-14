@@ -47,6 +47,12 @@ add_newline = false
 
 https://starship.rs/config/#prompt
 
+### screenshotの保存先を変更
+- ホームディレクトリにフォルダ作成＆保存先の変更
+```
+$ mkdir Ss
+$ defaults write com.apple.screencapture location ~/Ss/;killall SystemUIServer
+```
 ## link
 Homebrew: https://brew.sh/
 
