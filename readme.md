@@ -18,27 +18,32 @@ $ source ~/.zshrc
 $ git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts.git
 $ cd nerd-fonts
 ```
-好きなフォントをインストール
+- 好きなフォントをインストール
 ```
 ./install.sh #好きなフォントを指定 e.g. $ ./install.sh Hack
 ```
-不要になったファイルを削除
+- 不要になったファイルを削除
 ```
 $ cd ..
 $ rm -rf nerd-fonts
 ```
-最後にフォントの変更をTerminal->Profiles->Text->Fontで行う。
+- 最後にフォントの変更をTerminal->Profiles->Text->Fontで行う。
 
 今回の使用フォントは
 Bitstream Vera Sans Mono Nerd Font Complete 11
 
+※VS codeでterminalを使う人は
+- Settingsでterminal font欄に下記を入力
+```
+BitstreamVeraSansMonoNerdFontComplete-Roman
+```
 ### starship_アイコンの変更
 starship.tomlでの作業
 
 e.g.ラインの改行をしない場合下記を追加
-
+```
 add_newline = false
-
+```
 他にも色々あるので、下記を参照しカスタマイズ
 
 https://starship.rs/config/#prompt
