@@ -7,6 +7,8 @@ brew "asdf"
 brew "coreutils"
 brew "curl"
 brew "git"
+brew "gpg"
+brew "gawk"
 brew "stow"
 brew "starship"
 

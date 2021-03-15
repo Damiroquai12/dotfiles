@@ -1,4 +1,4 @@
-nodejs 14.15.1
+nodejs 14.15.4
 yarn 1.22.10
 rust 1.50.0
-deno 1.5.2
+deno 1.8.0

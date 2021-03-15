@@ -3,8 +3,25 @@
 set -e
 
 GIT_CLONE_PATH=~/projects/github.com/Damiroquai12
+
+if [ ! -d "$GIT_CLONE_PATH" ]; then
+    mkdir -p "$GIT_CLONE_PATH"
+fi
+
 STOW_PACKAGES_PATH="$GIT_CLONE_PATH"/dotfiles/packages
 
+unlink_packages=
+for i in "$@"; do
+    case "$i" in
+        -s|--skip-apps)
+            skip_apps=1
+            shift ;;
+        -u=*|--unlink=*)
+            unlink_packages="${i#*=}"
+            shift ;;
+        *) ;;
+    esac
+done
 
 log() {
     message=$1
@@ -21,19 +38,33 @@ is_dir() {
     [ -d "$path" ]
 }
 
+ensure_dir() {
+    path="$1"
+    if ! is_dir "$path"; then
+        mkdir -p "$path"
+    fi
+}
+
+if [ -n "$unlink_packages" ]; then
+    log 'Unlinking dotfiles...'
+    stow -vD -d "$STOW_PACKAGES_PATH" -t ~ "$unlink_packages"
+    exit
+fi
+
+if [ "$(dscl . -read ~/ UserShell)" = "UserShell: /bin/bash" ]; then
+    log 'Change default shell to zsh'
+    chsh -s /bin/zsh
+    chmod -R 755 /usr/local/share/zsh
+    chown -R root:staff zsh
+fi
+
 # homebrewのインストールがまだであれば、インストールする。
 if ! is_file /opt/homebrew/bin/brew; then
     log 'Setup Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# config がなければ作成する。
-if [ ! -d ~/.config ]; then
-    mkdir ~/.config
-fi
-
-# パッケージのリンク
-stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
+ensure_dir "$GIT_CLONE_PATH"
 
 # ローカルにドットファイルがなければcloneする。
 if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
@@ -41,11 +72,17 @@ if ! is_dir "$GIT_CLONE_PATH"/dotfiles; then
     cd "$GIT_CLONE_PATH"
     git clone https://github.com/Damiroquai12/dotfiles.git
 fi
+
 # ファイルから一括インストール
 if [ ! "$skip_apps" ]; then
     log 'Install Apps and CLIs'
     brew bundle --file "$GIT_CLONE_PATH"/dotfiles/Brewfile
 fi
+
+log 'Link dotfiles'
+ensure_dir ~/.config/starship
+
+stow -vd "$STOW_PACKAGES_PATH" -t ~ $(ls $STOW_PACKAGES_PATH)
 
 ### asdf Install Script
 for plugin in $(awk '{print $1}' ~/.tool-versions); do
@@ -74,8 +111,15 @@ for plugin in $(asdf plugin list); do
             log "Import release team keyring for Node.JS"
             bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
         fi
-
-        log "Install runtime: $plugin"
-        asdf install "$plugin"
+        # TODO REPLACE
+        #nodejsのインストールには次のコマンドを使用(m1エラー対策) arch -x86_64 asdf install nodejs  xx.xx.x 3/16/2021
+        #nodejsのインストールには次のコマンドを使用(m1エラー対策) arch -x86_64 asdf install deno xx.xx.x 3/16/2021
+        if [ "$plugin" = nodejs -o "$plugin" = deno ]; then
+            log "Install runtime(arch): $plugin"
+            arch -x86_64 asdf install "$plugin"
+        else
+            log "Install runtime: $plugin"
+            asdf install "$plugin"
+        fi
     fi
 done

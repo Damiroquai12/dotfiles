@@ -60,3 +60,5 @@ Starship: https://starship.rs/
 
 nerd-fonts: https://github.com/ryanoasis/nerd-fonts
 
+asdf: https://asdf-vm.com/#/core-manage-asdf
+
