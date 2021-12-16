@@ -7,7 +7,7 @@ Mac (Apple Silicon)購入,ファクトリーリセット後にすぐに開発で
 ## command
 
 ```
-$ curl -o - https://raw.githubusercontent.com/Damiroquai12/dotfiles/master/install | sh
+$ curl -o - https://raw.githubusercontent.com/i4dai/dotfiles/master/packages/scripts/scripts/dotfiles | sh
 $ source ~/.zshrc
 ```
 ## other
