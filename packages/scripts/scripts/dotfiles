@@ -2,7 +2,7 @@
 
 set -e
 
-GIT_CLONE_PATH=~/projects/github.com/Damiroquai12
+GIT_CLONE_PATH=~/projects/github.com/i4dai
 
 if [ ! -d "$GIT_CLONE_PATH" ]; then
     mkdir -p "$GIT_CLONE_PATH"
