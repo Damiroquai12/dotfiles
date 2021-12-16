@@ -273,15 +273,6 @@
           }
         }
       },
-      "virtualbox": {
-        "version": "6.1.18,142142",
-        "options": {
-          "full_name": "virtualbox",
-          "args": {
-            "appdir": "/Applications"
-          }
-        }
-      },
       "visual-studio-code": {
         "version": "1.54.2",
         "options": {
